@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		891505FE1F0D260A00BA09F0 /* basket in Resources */ = {isa = PBXBuildFile; fileRef = 891505FD1F0D260900BA09F0 /* basket */; };
 		9F422DDF1F0D1C9F003D8D83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F422DDE1F0D1C9F003D8D83 /* AppDelegate.swift */; };
 		9F422DE11F0D1C9F003D8D83 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F422DE01F0D1C9F003D8D83 /* art.scnassets */; };
 		9F422DE31F0D1C9F003D8D83 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F422DE21F0D1C9F003D8D83 /* GameViewController.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		891505FD1F0D260900BA09F0 /* basket */ = {isa = PBXFileReference; lastKnownFileType = folder; name = basket; path = ../../../../Downloads/basket; sourceTree = "<group>"; };
 		9F422DDB1F0D1C9F003D8D83 /* gp3d.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gp3d.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F422DDE1F0D1C9F003D8D83 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F422DE01F0D1C9F003D8D83 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 		9F422DDD1F0D1C9F003D8D83 /* gp3d */ = {
 			isa = PBXGroup;
 			children = (
+				891505FD1F0D260900BA09F0 /* basket */,
 				9F422DDE1F0D1C9F003D8D83 /* AppDelegate.swift */,
 				9F422DE01F0D1C9F003D8D83 /* art.scnassets */,
 				9F422DE21F0D1C9F003D8D83 /* GameViewController.swift */,
@@ -233,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F422DE11F0D1C9F003D8D83 /* art.scnassets in Resources */,
+				891505FE1F0D260A00BA09F0 /* basket in Resources */,
 				9F422DEB1F0D1C9F003D8D83 /* LaunchScreen.storyboard in Resources */,
 				9F422DE81F0D1C9F003D8D83 /* Assets.xcassets in Resources */,
 				9F422DE61F0D1C9F003D8D83 /* Main.storyboard in Resources */,
@@ -522,6 +526,7 @@
 				9F422E071F0D1CA0003D8D83 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9F422E081F0D1CA0003D8D83 /* Build configuration list for PBXNativeTarget "gp3dTests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +535,7 @@
 				9F422E0A1F0D1CA0003D8D83 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9F422E0B1F0D1CA0003D8D83 /* Build configuration list for PBXNativeTarget "gp3dUITests" */ = {
 			isa = XCConfigurationList;
@@ -538,6 +544,7 @@
 				9F422E0D1F0D1CA0003D8D83 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
