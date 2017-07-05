@@ -24,13 +24,13 @@ class GameViewController: UIViewController {
         scene.rootNode.addChildNode(cameraNode)
         
         // place the camera
-        cameraNode.position = SCNVector3(x: 0, y: 0, z: 50)
+        cameraNode.position = SCNVector3(x: 0, y: 0, z: 60)
         
         // create and add a light to the scene
         let lightNode = SCNNode()
         lightNode.light = SCNLight()
         lightNode.light!.type = .omni
-        lightNode.position = SCNVector3(x: 0, y: 10, z: 30)
+        lightNode.position = SCNVector3(x: 0, y: 10, z: 60)
         scene.rootNode.addChildNode(lightNode)
         
         // create and add an ambient light to the scene
@@ -41,10 +41,12 @@ class GameViewController: UIViewController {
         scene.rootNode.addChildNode(ambientLightNode)
         
         // retrieve the ship node
-        //let ship = scene.rootNode.childNode(withName: "MDL_OBJ", recursively: true)!
+        let ship = scene.rootNode.childNode(withName: "BASKET_BALL", recursively: true)!
+        let ball = scene.rootNode.childNodes
+        print(ball)
         
         // animate the 3d object
-        //ship.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: 2, z: 0, duration: 1)))
+        ship.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: 2, z: 0, duration: 1)))
         
         // retrieve the SCNView
         let scnView = self.view as! SCNView
