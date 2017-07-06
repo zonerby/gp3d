@@ -41,8 +41,20 @@ class GameViewController: UIViewController {
 //        scene.rootNode.addChildNode(ambientLightNode)
         
         // retrieve the ship node
-        let ball = scene.rootNode.childNode(withName: "Plane01", recursively: true)!
+        //let ball = scene.rootNode.childNode(withName: "Plane01", recursively: true)!
         //let hoop = scene.rootNode.childNode(withName: "Plane")
+        let ballscn = SCNScene(named: "art.scnassets/ball.scn")!
+        let ball = ballscn.rootNode.childNode(withName: "BASKET_BALL", recursively: true)!
+        ball.scale = SCNVector3(x:0.1, y:0.1, z:0.1)
+        ball.position = SCNVector3(x:-4.609,y:99.517,z:-7.0)
+        ball.physicsBody = SCNPhysicsBody(type: .dynamic, shape: nil)
+        ball.physicsBody?.mass = 1.0
+        ball.physicsBody?.friction = 1.0
+        ball.physicsBody?.rollingFriction = 0.01
+        
+        scene.rootNode.addChildNode(ball)
+        
+        
         let sc = scene.rootNode.childNodes
         print(sc)
         
@@ -51,7 +63,6 @@ class GameViewController: UIViewController {
         
         // retrieve the SCNView
         let scnView = self.view as! SCNView
-        
         // set the scene to the view
         scnView.scene = scene
         
