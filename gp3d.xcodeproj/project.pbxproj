@@ -76,6 +76,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A563B971F141A2A00059D5B /* Textures */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Textures;
+			sourceTree = "<group>";
+		};
 		9F422DD21F0D1C9F003D8D83 = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				9F422DDE1F0D1C9F003D8D83 /* AppDelegate.swift */,
+				2A563B971F141A2A00059D5B /* Textures */,
 				9F422DE01F0D1C9F003D8D83 /* art.scnassets */,
 				9F422DE21F0D1C9F003D8D83 /* GameViewController.swift */,
 				9F422DE41F0D1C9F003D8D83 /* Main.storyboard */,
