@@ -11,9 +11,18 @@ import QuartzCore
 import SceneKit
 import SpriteKit
 
+//enum sceneType: String {
+//    case Menu = "Menu"
+//    case Game = "Game"
+//}
+
 class GameViewController: UIViewController {
     
-    var menuHUDMaterial: SCNMaterial {
+    fileprivate var currentSceneName: String!
+    
+    fileprivate var allowCameraControl: Bool = true
+    
+    private var menuHUDMaterial: SCNMaterial {
         // Create a HUD label node in SpriteKit
         let sceneSize = CGSize(width: 300, height: 200)
         
@@ -34,38 +43,43 @@ class GameViewController: UIViewController {
         
         return material
     }
+    
+    private func prepare(to scene: SCNScene) {
+        switch currentSceneName {
+        case "Menu":
+            let hudNode = scene.rootNode.childNode(withName: "text", recursively: true)!
+            hudNode.geometry?.materials = [self.menuHUDMaterial]
+            hudNode.rotation = SCNVector4(x: 1, y: 0, z: 0, w: Float.pi) //try 2 replace Float.pi w/ 0
+            allowCameraControl = false
+        case "Game":
+            break
+        default:
+            print("eto defolt ty noob")
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // create a new scene
-        let scene = SCNScene(named: "art.scnassets/Menu.scn")!
+        // choose new scene type
+        let menuScene = "Menu"
+        let gameScene = "Game"
         
-        let hudNode = scene.rootNode.childNode(withName: "text", recursively: true)!
-        hudNode.geometry?.materials = [self.menuHUDMaterial]
-        hudNode.rotation = SCNVector4(x: 1, y: 0, z: 0, w: Float.pi)
+        currentSceneName = gameScene
         
-//        let ballscn = SCNScene(named: "art.scnassets/ball.scn")!
-//        let ball = ballscn.rootNode.childNode(withName: "BASKET_BALL", recursively: true)!
-//        ball.scale = SCNVector3(x:0.1, y:0.1, z:0.1)
-//        ball.position = SCNVector3(x:-4.609,y:99.517,z:-7.0)
-//        ball.physicsBody = SCNPhysicsBody(type: .dynamic, shape: nil)
-//        ball.physicsBody?.mass = 1.0
-//        ball.physicsBody?.friction = 1.0
-//        ball.physicsBody?.rollingFriction = 0.01
-//
-//        scene.rootNode.addChildNode(ball)
+        let scene = SCNScene(named: "art.scnassets/\(currentSceneName.description).scn")!
         
-        // animate the 3d object
-        //ball.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: 2, z: 0, duration: 1)))
+        //custom preparations
+        prepare(to: scene)
         
+        //default preparations
         // retrieve the SCNView
         let scnView = self.view as! SCNView
         // set the scene to the view
         scnView.scene = scene
         
         // allows the user to manipulate the camera
-        scnView.allowsCameraControl = true
+        scnView.allowsCameraControl = allowCameraControl
         
         // show statistics such as fps and timing information
         scnView.showsStatistics = true
