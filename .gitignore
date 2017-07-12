@@ -2,3 +2,5 @@
 .DS_Store
 gp3d/.DS_Store
 .DS_Store
+*.xcuserstate
+*.xcbkptlist
