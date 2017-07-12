@@ -87,9 +87,52 @@ class GameViewController: UIViewController {
         // configure the view
         scnView.backgroundColor = UIColor.green
         
+        let ballscn = SCNScene(named: "art.scnassets/ball.scn")!
+        let ball = ballscn.rootNode.childNode(withName: "BASKET_BALL", recursively: true)!
+        ball.scale = SCNVector3(x:0.15, y:0.15, z:0.15)
+        ball.position = SCNVector3(x:0,y:86,z:-20)
+        ball.physicsBody = SCNPhysicsBody(type: .static, shape: nil)
+        ball.physicsBody?.mass = 1.0
+        ball.physicsBody?.isAffectedByGravity = false
+        ball.physicsBody?.friction = 1.0
+        ball.physicsBody?.rollingFriction = 0.01
+        scnView.scene?.rootNode.addChildNode(ball)
+        
+        
         // add a tap gesture recognizer
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
         scnView.addGestureRecognizer(tapGesture)
+        
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panHandle(_:)))
+        scnView.addGestureRecognizer(panGesture)
+
+    }
+    var startPoint = CGPoint(x:0,y:0)
+    var finPoint = CGPoint(x:0,y:0)
+    var currentPoint = CGPoint(x:0,y:0)
+    var distance = 0.0
+    
+    @objc
+    func panHandle(_ gesture: UIGestureRecognizer){
+        let scnView = self.view as! SCNView
+        
+        
+        if let panGesture = gesture as? UIPanGestureRecognizer {
+            if panGesture.state == .began{
+                startPoint = panGesture.location(in: scnView)
+            }
+            if panGesture.state == .changed{
+                currentPoint = panGesture.location(in: scnView)
+                print("CURRENT \(currentPoint)")
+            }
+            if panGesture.state == .ended{
+                finPoint = panGesture.location(in: scnView)
+                let dx = finPoint.x - startPoint.x
+                let dy = finPoint.y - startPoint.y
+                distance = Double(sqrt(dx*dx + dy*dy))
+                print("distance = \(distance)   \(startPoint)  \(finPoint)")
+            }
+        }
     }
     
     @objc
