@@ -62,7 +62,7 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         
         // choose new scene type
-        let menuScene = "Menu"
+        //let menuScene = "Menu"
         let gameScene = "Game"
         
         currentSceneName = gameScene

@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13156.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dL6-NX-y3T">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13137.5"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,7 +17,7 @@
             <objects>
                 <viewController id="BV1-FR-VrT" customClass="GameViewController" customModule="gp3d" customModuleProvider="target" sceneMemberID="viewController">
                     <sceneKitView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </sceneKitView>
@@ -30,47 +31,53 @@
             <objects>
                 <viewController id="dL6-NX-y3T" customClass="MenuViewController" customModule="gp3d" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" id="gRX-pg-TcX">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" axis="vertical" alignment="center" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="Bsr-tl-RxP" userLabel="interface">
-                                <rect key="frame" x="0.0" y="110" width="375" height="488.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Bsr-tl-RxP" userLabel="interface">
+                                <rect key="frame" x="0.0" y="71.5" width="320" height="445"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="iAZ-cS-p7G" userLabel="design">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="184.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="iAZ-cS-p7G" userLabel="design">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="211"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sports" translatesAutoresizingMaskIntoConstraints="NO" id="bAp-ZV-JR6" userLabel="logo">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="131"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="131"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название Приложения" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OF3-yw-zhw" userLabel="title">
-                                                <rect key="frame" x="0.0" y="151" width="375" height="33.5"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OF3-yw-zhw" userLabel="title">
+                                                <rect key="frame" x="32.5" y="151" width="255.5" height="60"/>
+                                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="50"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" type="system" weight="black" pointSize="100"/>
+                                                </variation>
                                             </label>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="OF3-yw-zhw" firstAttribute="width" secondItem="bAp-ZV-JR6" secondAttribute="width" id="keO-s1-7bM"/>
+                                            <constraint firstItem="bAp-ZV-JR6" firstAttribute="width" secondItem="iAZ-cS-p7G" secondAttribute="width" id="ksy-vW-3SS"/>
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="YMa-os-G2N" userLabel="userInteracting">
-                                        <rect key="frame" x="87.5" y="244.5" width="200" height="244"/>
+                                        <rect key="frame" x="0.0" y="241" width="320" height="204"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите вид спорта" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gCF-7M-ePd" userLabel="msg">
-                                                <rect key="frame" x="2" y="0.0" width="196.5" height="24"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                                </variation>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="x0r-zw-sDz" userLabel="buttons">
-                                                <rect key="frame" x="0.0" y="44" width="200" height="200"/>
+                                                <rect key="frame" x="80" y="44" width="160" height="160"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="YES" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="uAo-lV-jNe" userLabel="leftButtons">
-                                                        <rect key="frame" x="0.0" y="0.0" width="90" height="200"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="uAo-lV-jNe" userLabel="leftButtons">
+                                                        <rect key="frame" x="0.0" y="0.0" width="70" height="160"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="obi-xV-nAV" userLabel="basketball">
-                                                                <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="obi-xV-nAV" userLabel="basketball">
+                                                                <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="obi-xV-nAV" secondAttribute="height" multiplier="1:1" id="xqJ-Ua-j3o"/>
                                                                 </constraints>
@@ -78,12 +85,15 @@
                                                                 <state key="normal" title="🏀" backgroundImage="parket">
                                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                                 </state>
+                                                                <variation key="heightClass=regular-widthClass=regular">
+                                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="120"/>
+                                                                </variation>
                                                                 <connections>
-                                                                    <action selector="basketButtonPressed:" destination="dL6-NX-y3T" eventType="touchUpInside" id="7oQ-HS-j4d"/>
+                                                                    <segue destination="BV1-FR-VrT" kind="show" identifier="basketballSegue" id="oaC-t8-ybi"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ir-oa-zg0" userLabel="hockey">
-                                                                <rect key="frame" x="0.0" y="110" width="90" height="90"/>
+                                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ir-oa-zg0" userLabel="hockey">
+                                                                <rect key="frame" x="0.0" y="90" width="70" height="70"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="1ir-oa-zg0" secondAttribute="height" multiplier="1:1" id="BG1-2o-Xf5"/>
                                                                 </constraints>
@@ -91,14 +101,17 @@
                                                                 <state key="normal" title="🏒" backgroundImage="ice">
                                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                                 </state>
+                                                                <variation key="heightClass=regular-widthClass=regular">
+                                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="120"/>
+                                                                </variation>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="YES" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Xfc-BK-Bsq" userLabel="rightButtons">
-                                                        <rect key="frame" x="110" y="0.0" width="90" height="200"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Xfc-BK-Bsq" userLabel="rightButtons">
+                                                        <rect key="frame" x="90" y="0.5" width="70" height="159"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y6l-lm-Ciw" userLabel="football">
-                                                                <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y6l-lm-Ciw" userLabel="football">
+                                                                <rect key="frame" x="0.0" y="0.0" width="70" height="69.5"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="Y6l-lm-Ciw" secondAttribute="height" multiplier="1:1" id="eUS-KQ-1A2"/>
                                                                 </constraints>
@@ -106,9 +119,12 @@
                                                                 <state key="normal" title="⚽️" backgroundImage="grass">
                                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                                 </state>
+                                                                <variation key="heightClass=regular-widthClass=regular">
+                                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="120"/>
+                                                                </variation>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bwq-D5-Vob" userLabel="baseball">
-                                                                <rect key="frame" x="0.0" y="110" width="90" height="90"/>
+                                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bwq-D5-Vob" userLabel="baseball">
+                                                                <rect key="frame" x="0.0" y="89.5" width="70" height="69.5"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="Bwq-D5-Vob" secondAttribute="height" multiplier="1:1" id="nfK-GV-nHh"/>
                                                                 </constraints>
@@ -116,34 +132,41 @@
                                                                 <state key="normal" title="⚾️" backgroundImage="court">
                                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                                 </state>
+                                                                <variation key="heightClass=regular-widthClass=regular">
+                                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="120"/>
+                                                                </variation>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
                                                 </subviews>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="200" id="ZRk-g8-Qg2"/>
-                                                </constraints>
                                             </stackView>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="x0r-zw-sDz" firstAttribute="width" secondItem="YMa-os-G2N" secondAttribute="width" multiplier="0.5" id="7lZ-eY-vKu"/>
+                                            <constraint firstItem="gCF-7M-ePd" firstAttribute="width" secondItem="YMa-os-G2N" secondAttribute="width" id="Ojc-PI-tyf"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="YMa-os-G2N" firstAttribute="width" secondItem="Bsr-tl-RxP" secondAttribute="width" id="aDr-Ye-TC7"/>
+                                    <constraint firstItem="iAZ-cS-p7G" firstAttribute="width" secondItem="Bsr-tl-RxP" secondAttribute="width" id="jLr-s8-spx"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.25098040700000002" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Bsr-tl-RxP" firstAttribute="centerX" secondItem="O19-Az-1Zr" secondAttribute="centerX" id="hHk-MA-Ppr"/>
                             <constraint firstItem="Bsr-tl-RxP" firstAttribute="width" secondItem="gRX-pg-TcX" secondAttribute="width" id="iNY-4h-75Q"/>
-                            <constraint firstItem="Bsr-tl-RxP" firstAttribute="top" secondItem="O19-Az-1Zr" secondAttribute="top" constant="90" id="jb3-sb-PGo"/>
+                            <constraint firstItem="Bsr-tl-RxP" firstAttribute="centerY" secondItem="O19-Az-1Zr" secondAttribute="centerY" id="jFV-j9-V1E"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O19-Az-1Zr"/>
                     </view>
                     <connections>
-                        <outlet property="apptitle" destination="OF3-yw-zhw" id="Fd6-0H-oNK"/>
+                        <outlet property="appTitle" destination="OF3-yw-zhw" id="Ruy-fy-xFu"/>
                         <outlet property="baseballButton" destination="Bwq-D5-Vob" id="0X9-wW-sDC"/>
                         <outlet property="basketButton" destination="obi-xV-nAV" id="6Ul-mD-dYg"/>
                         <outlet property="footballButton" destination="Y6l-lm-Ciw" id="5lX-Jk-bld"/>
                         <outlet property="hockeyButton" destination="1ir-oa-zg0" id="Kjy-eO-3n6"/>
-                        <segue destination="BV1-FR-VrT" kind="show" identifier="gameSegue" id="dd5-dl-bQc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Yy-tx-g5z" userLabel="First Responder" sceneMemberID="firstResponder"/>
