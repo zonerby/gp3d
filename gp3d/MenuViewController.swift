@@ -25,11 +25,10 @@ class MenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //pisos
-        
         appTitle.text = "З🏀Ж"
-        
+    }
+    
+    override func viewDidLayoutSubviews() {
         for button in buttons {
             button.layer.cornerRadius = button.frame.width/2.0
         }
@@ -43,7 +42,7 @@ class MenuViewController: UIViewController {
         if let identifier = segue.identifier {
             switch identifier {
             case "basketballSegue":
-            break //print("🏀")
+                break //print("🏀")
             default:
                 break //print("🌚")
             }
