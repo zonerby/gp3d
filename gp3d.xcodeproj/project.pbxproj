@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2A591F6A1F169BB000A579EA /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A591F691F169BB000A579EA /* MenuViewController.swift */; };
+		2A0E04B21F17E2D3008A9754 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0E04B11F17E2D3008A9754 /* MenuViewController.swift */; };
 		9F422DDF1F0D1C9F003D8D83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F422DDE1F0D1C9F003D8D83 /* AppDelegate.swift */; };
 		9F422DE11F0D1C9F003D8D83 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F422DE01F0D1C9F003D8D83 /* art.scnassets */; };
 		9F422DE31F0D1C9F003D8D83 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F422DE21F0D1C9F003D8D83 /* GameViewController.swift */; };
@@ -36,7 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2A591F691F169BB000A579EA /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuViewController.swift; path = ../../../../Downloads/gp3d/gp3d/MenuViewController.swift; sourceTree = "<group>"; };
+		2A0E04B11F17E2D3008A9754 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		9F422DDB1F0D1C9F003D8D83 /* gp3d.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gp3d.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F422DDE1F0D1C9F003D8D83 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F422DE01F0D1C9F003D8D83 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -104,7 +104,7 @@
 				9F422DDE1F0D1C9F003D8D83 /* AppDelegate.swift */,
 				9F422DE01F0D1C9F003D8D83 /* art.scnassets */,
 				9F422DE21F0D1C9F003D8D83 /* GameViewController.swift */,
-				2A591F691F169BB000A579EA /* MenuViewController.swift */,
+				2A0E04B11F17E2D3008A9754 /* MenuViewController.swift */,
 				9F422DE41F0D1C9F003D8D83 /* Main.storyboard */,
 				9F422DE71F0D1C9F003D8D83 /* Assets.xcassets */,
 				9F422DE91F0D1C9F003D8D83 /* LaunchScreen.storyboard */,
@@ -264,8 +264,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F422DE31F0D1C9F003D8D83 /* GameViewController.swift in Sources */,
-				2A591F6A1F169BB000A579EA /* MenuViewController.swift in Sources */,
 				9F422DDF1F0D1C9F003D8D83 /* AppDelegate.swift in Sources */,
+				2A0E04B21F17E2D3008A9754 /* MenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
