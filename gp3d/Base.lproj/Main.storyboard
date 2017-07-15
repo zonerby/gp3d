@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13156.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dL6-NX-y3T">
-    <device id="retina4_0" orientation="portrait">
+    <device id="retina5_5" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -17,7 +17,7 @@
             <objects>
                 <viewController id="BV1-FR-VrT" customClass="GameViewController" customModule="gp3d" customModuleProvider="target" sceneMemberID="viewController">
                     <sceneKitView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </sceneKitView>
@@ -31,21 +31,21 @@
             <objects>
                 <viewController id="dL6-NX-y3T" customClass="MenuViewController" customModule="gp3d" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" id="gRX-pg-TcX">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Bsr-tl-RxP" userLabel="interface">
-                                <rect key="frame" x="0.0" y="71.5" width="320" height="445"/>
+                                <rect key="frame" x="0.0" y="-120" width="736" height="654"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="iAZ-cS-p7G" userLabel="design">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="211"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="736" height="211.33333333333331"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sports" translatesAutoresizingMaskIntoConstraints="NO" id="bAp-ZV-JR6" userLabel="logo">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="131"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="736" height="131.33333333333334"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OF3-yw-zhw" userLabel="title">
-                                                <rect key="frame" x="32.5" y="151" width="255.5" height="60"/>
+                                                <rect key="frame" x="240.33333333333331" y="151.33333333333334" width="255.33333333333331" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="50"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -59,10 +59,10 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="YMa-os-G2N" userLabel="userInteracting">
-                                        <rect key="frame" x="0.0" y="241" width="320" height="204"/>
+                                        <rect key="frame" x="0.0" y="241.33333333333329" width="736" height="412.66666666666674"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите вид спорта" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gCF-7M-ePd" userLabel="msg">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="24"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="736" height="24.000000000000014"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -71,13 +71,13 @@
                                                 </variation>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="x0r-zw-sDz" userLabel="buttons">
-                                                <rect key="frame" x="80" y="44" width="160" height="160"/>
+                                                <rect key="frame" x="184" y="44" width="368" height="368.66666666666663"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="uAo-lV-jNe" userLabel="leftButtons">
-                                                        <rect key="frame" x="0.0" y="0.0" width="70" height="160"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="174" height="368.66666666666663"/>
                                                         <subviews>
                                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="obi-xV-nAV" userLabel="basketball">
-                                                                <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="174" height="174.33333333333334"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="obi-xV-nAV" secondAttribute="height" multiplier="1:1" id="xqJ-Ua-j3o"/>
                                                                 </constraints>
@@ -93,7 +93,7 @@
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ir-oa-zg0" userLabel="hockey">
-                                                                <rect key="frame" x="0.0" y="90" width="70" height="70"/>
+                                                                <rect key="frame" x="0.0" y="194.33333333333334" width="174" height="174.33333333333329"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="1ir-oa-zg0" secondAttribute="height" multiplier="1:1" id="BG1-2o-Xf5"/>
                                                                 </constraints>
@@ -108,10 +108,10 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Xfc-BK-Bsq" userLabel="rightButtons">
-                                                        <rect key="frame" x="90" y="0.5" width="70" height="159"/>
+                                                        <rect key="frame" x="194" y="0.66666666666665719" width="174" height="367.33333333333337"/>
                                                         <subviews>
                                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y6l-lm-Ciw" userLabel="football">
-                                                                <rect key="frame" x="0.0" y="0.0" width="70" height="69.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="174" height="173.33333333333331"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="Y6l-lm-Ciw" secondAttribute="height" multiplier="1:1" id="eUS-KQ-1A2"/>
                                                                 </constraints>
@@ -124,7 +124,7 @@
                                                                 </variation>
                                                             </button>
                                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bwq-D5-Vob" userLabel="baseball">
-                                                                <rect key="frame" x="0.0" y="89.5" width="70" height="69.5"/>
+                                                                <rect key="frame" x="0.0" y="193.33333333333334" width="174" height="174.00000000000003"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="Bwq-D5-Vob" secondAttribute="height" multiplier="1:1" id="nfK-GV-nHh"/>
                                                                 </constraints>

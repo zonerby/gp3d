@@ -31,7 +31,7 @@ class GameViewController: UIViewController {
         
         let instructionLabel = SKLabelNode(fontNamed: "Menlo-Bold")
         instructionLabel.fontSize = 35
-        instructionLabel.text = "Ты пидор 🤡"
+        instructionLabel.text = "З🤡Ж"
         instructionLabel.position.x = sceneSize.width / 2
         instructionLabel.position.y = 115
         skScene.addChild(instructionLabel)
