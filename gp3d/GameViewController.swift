@@ -20,6 +20,8 @@ class GameViewController: UIViewController {
     
     fileprivate var currentSceneName: String!
     
+    fileprivate var ball: SCNNode!
+    
     fileprivate var allowCameraControl: Bool = true
     
     private var menuHUDMaterial: SCNMaterial {
@@ -88,51 +90,49 @@ class GameViewController: UIViewController {
         scnView.backgroundColor = UIColor.green
         
         let ballscn = SCNScene(named: "art.scnassets/ball.scn")!
-        let ball = ballscn.rootNode.childNode(withName: "BASKET_BALL", recursively: true)!
-        ball.scale = SCNVector3(x:0.15, y:0.15, z:0.15)
-        ball.position = SCNVector3(x:0,y:86,z:-20)
-        ball.physicsBody = SCNPhysicsBody(type: .static, shape: nil)
-        ball.physicsBody?.mass = 1.0
-        ball.physicsBody?.isAffectedByGravity = false
-        ball.physicsBody?.friction = 1.0
-        ball.physicsBody?.rollingFriction = 0.01
-        scnView.scene?.rootNode.addChildNode(ball)
+        self.ball = ballscn.rootNode.childNode(withName: "BASKET_BALL", recursively: true)!
+        self.ball.scale = SCNVector3(x:0.15, y:0.15, z:0.15)
+        self.ball.position = SCNVector3(x:0,y:86,z:-20)
+        self.ball.physicsBody = SCNPhysicsBody(type: .dynamic, shape: nil)
+        self.ball.physicsBody?.mass = 0.6237
+        self.ball.physicsBody?.isAffectedByGravity = false
+        self.ball.physicsBody?.friction = 1.0
+        self.ball.physicsBody?.rollingFriction = 0.01
+        scnView.scene?.rootNode.addChildNode(self.ball)
+        scnView.scene?.physicsWorld.gravity = SCNVector3(0, -260, 0)
         
-        
+        let basket = scene.rootNode.childNode(withName: "basket", recursively: true)!
+        basket.physicsBody = SCNPhysicsBody(type: .kinematic, shape: nil)
         // add a tap gesture recognizer
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
         scnView.addGestureRecognizer(tapGesture)
         
-        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panHandle(_:)))
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:)))
         scnView.addGestureRecognizer(panGesture)
-
+        
+        //let swipeGesture = UISwipeGestureRecognizer(target: self, action: nil)
     }
-    var startPoint = CGPoint(x:0,y:0)
-    var finPoint = CGPoint(x:0,y:0)
-    var currentPoint = CGPoint(x:0,y:0)
-    var distance = 0.0
     
-    @objc
-    func panHandle(_ gesture: UIGestureRecognizer){
-        let scnView = self.view as! SCNView
+    @objc func handlePan(_ gesture: UIGestureRecognizer)
+    {
+        guard let panGesture = gesture as? UIPanGestureRecognizer else { return }
         
-        
-        if let panGesture = gesture as? UIPanGestureRecognizer {
-            if panGesture.state == .began{
-                startPoint = panGesture.location(in: scnView)
-            }
-            if panGesture.state == .changed{
-                currentPoint = panGesture.location(in: scnView)
-                print("CURRENT \(currentPoint)")
-            }
-            if panGesture.state == .ended{
-                finPoint = panGesture.location(in: scnView)
-                let dx = finPoint.x - startPoint.x
-                let dy = finPoint.y - startPoint.y
-                distance = Double(sqrt(dx*dx + dy*dy))
-                print("distance = \(distance)   \(startPoint)  \(finPoint)")
-            }
+        switch panGesture.state {
+        case .ended:
+            let velocity = panGesture.velocity(in: self.view)
+            
+            self.ball.physicsBody?.isAffectedByGravity = true
+            
+            let scale: Float = 70.0
+            let force = SCNVector3(x: Float(velocity.x)/scale, y: abs(Float(velocity.y))/scale , z: Float(velocity.y)/scale)
+            let position = SCNVector3(x: 0, y: 0, z: 0)
+            self.ball.physicsBody?.applyForce(force,
+                                              at: position, asImpulse: true)
+            break
+        default:
+            break
         }
+        
     }
     
     @objc
@@ -146,10 +146,15 @@ class GameViewController: UIViewController {
         // check that we clicked on at least one object
         if hitResults.count > 0 {
             // retrieved the first clicked object
-            let result = hitResults[0]
+            let node = hitResults[0].node
+            
+            self.ball.physicsBody?.velocity = SCNVector3(0, 0, 0)
+            self.ball.physicsBody?.isAffectedByGravity = false
+            self.ball.physicsBody?.angularVelocity = SCNVector4()
+            self.ball.position = SCNVector3(x:0,y:86,z:-20)
             
             // get its material
-            let material = result.node.geometry!.firstMaterial!
+            let material = node.geometry!.firstMaterial!
             
             // highlight it
             SCNTransaction.begin()
@@ -186,5 +191,4 @@ class GameViewController: UIViewController {
             return .all
         }
     }
-
 }
