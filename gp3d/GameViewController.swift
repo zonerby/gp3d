@@ -80,6 +80,40 @@ class GameViewController: UIViewController {
     }
     
     // MARK: - Private functions
+    
+    // MARK: Gestures handling
+    
+    @objc private func handleTap(_ gestureRecognize: UIGestureRecognizer)
+    {
+        updateBall(with: .basic)
+    }
+    
+    @objc private func handlePan(_ gesture: UIGestureRecognizer)
+    {
+        if (ball.physicsBody?.isAffectedByGravity ?? true) == true
+        {
+            return
+        }
+        guard let panGesture = gesture as? UIPanGestureRecognizer else { return }
+        
+        switch panGesture.state {
+        case .ended:
+            let velocity = panGesture.velocity(in: self.view)
+            let scale: Float = 70.0
+            let force = SCNVector3(x: Float(velocity.x)/scale,
+                                   y: abs(Float(velocity.y))/scale,
+                                   z: Float(velocity.y)/scale)
+            let position = SCNVector3(x: 0, y: -0.5, z: 0)
+            updateBall(with: .free)
+            ball.physicsBody?.applyForce(force,
+                                         at: position,
+                                         asImpulse: true)
+            break
+        default:
+            break
+        }
+    }
+    
     // MARK: Game scene
     
     private func prepareGameScene()
@@ -89,6 +123,7 @@ class GameViewController: UIViewController {
         configureScene()
         configureBall()
         configureBasket()
+        configureWall()
         configureGestures()
     }
     
@@ -126,10 +161,32 @@ class GameViewController: UIViewController {
         body.mass = 0.6237
         body.friction = 1.0
         body.rollingFriction = 0.01
+        body.restitution = 1
         ballNode.physicsBody = body
         ball = ballNode
         updateBall(with: .basic)
         scene.rootNode.addChildNode(ball)
+    }
+    
+    private func configureBasket()
+    {
+        guard let basket = scene.rootNode.childNode(withName: "basket", recursively: true) else {return}
+        basket.physicsBody = SCNPhysicsBody(type: .kinematic, shape: nil)
+    }
+    
+    private func configureWall()
+    {
+        guard let wall = scene.rootNode.childNode(withName: "wall", recursively: true) else {return}
+        wall.physicsBody = SCNPhysicsBody(type: .kinematic, shape: nil)
+    }
+    
+    private func configureGestures()
+    {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+        view.addGestureRecognizer(tapGesture)
+        
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:)))
+        view.addGestureRecognizer(panGesture)
     }
     
     private func updateBall(with state: BallState)
@@ -145,50 +202,6 @@ class GameViewController: UIViewController {
             physicsBody.isAffectedByGravity = false
             physicsBody.angularVelocity = SCNVector4()
             ball.position = SCNVector3(x:0, y:35, z:-20)
-            break
-        }
-    }
-    
-    private func configureBasket()
-    {
-        guard let basket = scene.rootNode.childNode(withName: "basket", recursively: true) else {return}
-        basket.physicsBody = SCNPhysicsBody(type: .kinematic, shape: nil)
-    }
-    
-    private func configureGestures()
-    {
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
-        view.addGestureRecognizer(tapGesture)
-        
-        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:)))
-        view.addGestureRecognizer(panGesture)
-    }
-    
-    // MARK: - Gestures handling
-    
-    @objc private func handleTap(_ gestureRecognize: UIGestureRecognizer)
-    {
-        updateBall(with: .basic)
-    }
-    
-    @objc private func handlePan(_ gesture: UIGestureRecognizer)
-    {
-        guard let panGesture = gesture as? UIPanGestureRecognizer else { return }
-        
-        switch panGesture.state {
-        case .ended:
-            let velocity = panGesture.velocity(in: self.view)
-            let scale: Float = 70.0
-            let force = SCNVector3(x: Float(velocity.x)/scale,
-                                   y: abs(Float(velocity.y))/scale,
-                                   z: Float(velocity.y)/scale)
-            let position = SCNVector3(x: 0, y: -0.5, z: 0)
-            updateBall(with: .free)
-            ball.physicsBody?.applyForce(force,
-                                         at: position,
-                                         asImpulse: true)
-            break
-        default:
             break
         }
     }
